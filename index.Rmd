@@ -1,0 +1,296 @@
+---
+title: "MICHELIN GROUP"
+author: "MAXIMICE"
+date: 'JUNE 25TH TO 28TH 2019'
+output:
+ 
+  html_document:
+    css: FORMATO.css
+    fig_width: 8
+    fig_height: 8
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+
+---
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script> 
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(readxl)
+library(shiny)
+library(dplyr)
+library(knitr)
+```
+
+## **Destination Presentation**
+
+**Barcelona Metropolitan Region is one of Europe’s most important metropolies. Barcelona is the economic, cultural and administrative capital of Catalonia, one of the economic drivers of Spain and Southern Europe.**
+
+**Barcelona sellling points**
+* **Welcoming** Maybe the locals walk fast, but they always find a moment to chat. We know that a smile is the best calling card, and in Barcelona you will find lots! With a smile , the day starts much better.
+* **Easily accesible** All you have to do is get on a plane to Barcelona: the city has excellent air connections to the vast majority of Spanish, European and major intercontinental destinations. As well, the airport is just 15 minutes from the city centre. You make the most of your time when you come to Barcelona!
+* **State of the art infrastructures** Whether for large conferences or more intimate gatherings, Barcelona has just the right facility. Imagine a banquet in a charming historic place ? Or perhaps a cutting-edge facility for that unbeatable presentation? There's such a variety of welcoming and modern hotels.
+* **Sucessful** 
+* **Practical** Barcelona is just the right size: not too big, not too small. You can nip between the most interesting sights , by cycle -thanks to an extensive network of bike lanes-, by walking or public transport , and you can soon get to the must-see sights in your free time. In Barcelona, everything is close at hand !
+* **Avant-garde** Picasso, Miró, Dalí, Gaudí, Tàpies... they were in their time at the vanguard of their movements and their testing-ground was Barcelona. That creative flair and typical Catalan restlessness is very much part of the city today and this is reflected in the buildings, exhibitions , and the design and art that you'll find in the most unexpected places .
+* **Mediterranean** Thanks to its great weather, diet, and above all, its character, you will see the true meaning of the word 'Mediterranean' in Barcelona. You can feel its cosmopolitan and dynamic spirit in the air and you actually live the Mediterranean experience. This magic draws you out onto the streets to stroll and enjoy the city's five kilometres of Mediterranean beaches.
+* **Sustainable** In Barcelona we are very aware of the importance of protecting the environment, our resources and social surroundings while preserving our culture and traditions. That is why Barcelona has become the first city in the world to be awarded Biosphere certification, providing a guarantee that the city manages tourism responsibly and sustainably. Barcelona is also a barrier-free city, which is ready to welcome visitors with disabilities, and approaches accessibility with town planning, transport, IT, buildings and public spaces in mind.
+* **Dynamic** Every time you come to Barcelona, there's a nice surprise: a unexpected event or market, an outdoor concert, a fun-run to watch, an impromptu street party, an alternative-type festival ... Things are always happening in Barcelona, and that's why no one gets bored here!
+* **Cosmopolitan** Barcelona has always been a welcoming city. Today you'll find more than 160 different nationalities here: a melting pot of cultures and languages that make it an example of coexistence and dynamism.
+* **Cultural** And what history: over 2000 years of it! You´ll come across Roman ruins , Gothic treasures and surprises from the Renaissance age. Visiting the different corners of Barcelona is an authentic journey through time.
+
+
+You can sumarize all these selling points in the following video presentation: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dhK922IviZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## **Accommodation**
+
+### **Main Hotel: WHOTEL BARCELONA**
+
+**W Barcelona** is a flagship hotel for the **W brand**. We opened our doors in 2009 and in order to ensure that we retain our position as a leading lifestyle hotel, we have undergone a complete renovation of our guestrooms in 2016 and our top tier suites in 2018, offering a new and innovative design to our guests. 
+**W Barcelona** enjoys a privileged location, being the only hotel with **direct beach access and beach club**. 
+With 473 guestrooms, we have the ability to host large groups and offer buyouts. The only difference between each guestroom is the view and how high it is located, otherwise, in terms of size and décor, all guestrooms are the same. In addition, because the hotel was built on reclaimed land, every guestroom benefits from exceptional views of the sea. 
+What differentiates us from the other hotels in Barcelona? In terms of function spaces, our 10,000 sq.ft. Great Room features a floor to ceiling window with stunning views of the Mediterranean. Combined with our 14 breakout rooms and 5 terraces, we are  perfect for conferences of all sizes.
+In addition, **W Barcelona** features 6 F&B outlets including, but not limited to, a Michelin star restaurant, a rooftop cocktail lounge and beach club. Perfect for incentive trips, as we also have 3 pools, 2 of which are outdoors and 1 indoors, part of our   new wellness and fitness area, GETAWAY and FIT. 
+
+**W Hotel Barcelona Virtual Tour**:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/urt7o2_E-1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<img src = "https://pix10.agoda.net/hotelImages/161/161330/161330_16080919470045346683.jpg?s=1024x768" width="360"> <img src = "https://q-ec.bstatic.com/images/hotel/max1024x768/101/101040075.jpg" width="360" align="right"> 
+
+
+
+
+## Programme
+
+### **Programme Overview and timeline**
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(timevis)
+library(dplyr)
+library(readxl)
+
+timeline <- read_excel("timeline.xlsx", sheet = "Sheet1", 
+    col_types = c("date", 
+        "text", "text", "numeric", "text", 
+        "text"))
+
+data <- data.frame( id = 1:length(timeline$start),
+                    start = as.POSIXlt(timeline$start),
+                    content = timeline$content,
+                    group = timeline$group,
+                    type = "box",
+                    style = "background-color:#FF9933;")
+
+groups = data.frame(id = 1:4, content = c("Morning", "Lunch", "Afternoon", "Diner"))
+
+tl <- timevis(data, groups, showZoom = TRUE, zoomFactor = 0.2, fit = TRUE, width = '100%', height = 300)
+
+tl %>% setOptions(list(orientation = "top", align = "left"))
+
+```
+
+### **Map**
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+library(leaflet)
+library(stringr)
+library(ggmap)
+library(readxl)
+library(dplyr)
+library(leaflet.extras)
+library(shiny)
+
+coordinates <- read_excel("timeline.xlsx", 
+    sheet = "Sheet3", col_types = c("text", 
+        "text", "numeric", "numeric", "text", 
+        "text"))
+
+coordinates$Category <- factor(coordinates$Category)
+
+m <- coordinates %>% 
+  leaflet(options = leafletOptions(dragging = TRUE,
+  minZoom = 14, maxZoom = 18)) %>% 
+  addProviderTiles("Esri") %>% 
+  setView(lng = 2.1687300, lat = 41.3863900, zoom = 14) 
+
+pal <- colorFactor(palette = c("red","blue"),
+      levels = coordinates$Category)
+
+m %>% clearBounds() %>% 
+  addCircleMarkers(radius = 5, color = ~pal(Category)) %>% 
+  addPopups(popup = paste0("<b>",coordinates$Location,"</b>")) %>% 
+  addLegend(position = "bottomright", pal = pal, 
+  values = coordinates$Category) %>% addResetMapButton()
+
+```
+
+### **DAY 1** 
+
+Arrival into **Barcelona airport** from 9am, meet and greet by Russian Speaking assistance and transfer to hotelW in different vehicles, depending on final arrival list 
+
+After 20 minutes transfer, check in at the hotel and some free time until lunch time 
+
+For lunch, it will be in hotel W. The hotel offers a couple of possibilities for this lunch: 
+
+Lunch in **Sun Deck**
+
+<img src = "https://cache.marriott.com/marriottassets/marriott/BCNWH/bcnwh-sun-deck-9424-hor-feat.jpg?interpolation=progressive-bilinear&" width="720">
+
+Lunch in **Breeze Room**
+
+<img src = "http://meeting-assets.starwoodpromos.com/P3183/Breezeroom1.jpg" width="800">
+
+After the lunch, once all the group will be together, we will start a **city tour of Barcelona** including entrace to the most representative monument of the city: **Sagrada Familia**
+
+#### **CITY TOUR AND SAGRADA FAMILIA VISIT** 
+
+* **Duration**: 4 hours maximum 
+* **Location**: Panoramic tour and Sagrada Familia
+* **Capacity** Minimun 20 pax - maximum 100 pax 
+* **included** English speaking guide (Russian on request), bus at disposal for the group and entrace ticket to Sagrada Familia
+
+We will start our tour in our chosen hotel  with a panoramic tour of the city, where the group will see the main highlights of the city: **Gaudi's monuments (Casa Mila and Casa Batllo), Montjuic, Port Vell at the end of Las Ramblas, the new Barcelona (modern part) and we will stop at the Sagrada Familia for visit**
+
+**Sagrada Familia** is a church unlike any other. It is a surreal combination of Gothic, Art Nouveau and Modernist styles. Walk through the church’s dream-like interior and see the symphony of light created by the stained glass. Admire the ornate Nativity and Passion facades. As you explore the church, your guide will tell you the story of Gaudi’s ambition and untimely death, the anarchist bombing, and the technology used to realize his vision.
+
+<img src = "https://images.musement.com/cover/0002/37/thumb_136083_cover_header.jpeg?&q=60&fit=crop&lossless=true&auto=format&w=412&h=200" width="800" >
+
+
+At the end of the visit,  the group will enjoy with a Dinner next to the Sea at the restaurant **El Cangrejo Loco**
+
+
+#### **Cangrejo Loco Restaurant** 
+
+* **Location** Port Olympic
+* **Cuisine**  Mediterranean cuisine 
+* **capacity** 450 pax in different rooms, dining rooms and marquees 
+
+On the 16th of July 1992, on the occasion of the Barcelona 1992 Olympic Games, **El Cangrejo Loco** began its activity in Barcelona’s Olympic Port, a marina created for hosting the sailing events. Nowadays, it is considered a symbol of the new Barcelona post-92.
+
+The Games are all history now, but **El Cangrejo Loco** is present and future. Still today, after more than fifteen years, it remains loyal to its objective: to guarantee the best quality in all the dishes and in the exquisite service.
+
+The restaurant is divided into several dining rooms ideal for any occasion, and also has two large indoor terraces and five outdoor terraces, all of them with spectacular views of the sea and the Olympic Port.
+
+Specialized in paellas and rice dishes, beach fish and seafood, the restaurant's menu is sourced from fresh and natural products to offer excellent cuisine 
+
+<img src = "http://www.elcangrejoloco.com/archivos/galeria/grandes/13534967022.jpg" width="800">
+
+Once the dinner will finish, we transfer the group back to **hotel W Barcelona** for overnight. 
+
+
+### **DAY 2** 
+
+After buffet breakfast, the group will have a full day meeting in **Breeze room** 
+Coffee breaks will be served at **Breeze terrace** 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HcPKJqJepxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Dinner will be served at **Salt**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9LI7-_1PNoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Overnight at the hotel 
+
+
+### **DAY 3** 
+
+After buffet breakfast, the group will have a full day meeting in **Breeze room** 
+Coffee breaks will be served at **Breeze terrace** 
+
+After the conference the group will have some free time until dinner time. For this special dinner, we have suggested an nice beach club located outside Barcelona and next to the Mediterranan Sea **Kawai Beach Club** located around 20 minutes transfer south from **Hotel W Barcelona**
+
+
+#### **Kawai Beach Club** 
+
+* **Location** Gava Mar town
+* **Cuisine** Mediterranean Cuisine 
+* **capacity** Around 600 seeating pax depending on the used spaces. For the group will have the BBQ area in exclusivity for the group
+
+You've not been magically transported to Polynesia, you're at the beach in Gavà, but chef Òscar Manresa has transformed this spot among the sand dunes into a **'xiringuito' (beach bar)** with style, where you can imagine spending your holidays, stretched out on a lounge chair in front of the Mediterranean Sea, while you watch the world go by. And bonus: you can eat really well here too. Everything is served tapas-style, some with ingredients from **Kauai's own garden**, and you won't find greasy mounds of fried snacks like you might among some of the worst coastline snack bars. Fill up on fresh oysters, calamari, freshly fried fish, squid with meatballs, burgers, grilled meats...
+
+This splendid xiringuito is also very clear about the maxim that anyone who prepares sardines should have tattooed in their mind: 'Sardines are only good in months without an "r".' Their popular skewers, charcoal-grilled on a bamboo skewer and cooked with just a hint of salt, are a classic option in the summer months. And they are just one of the many charms of a pleasant and cheerful space, with a large terrace overlooking the sea and a menu full of classic tapas made with good, seasonal products.
+
+<img src = "http://www.baixllobregatcb.com/sites/default/files/styles/cap_alera_coorporativa/public/terraza_ok.jpg?itok=Js3lfWdG " width="720">
+
+For party, the Club has a **lounge** where we can have a DJ party. 
+
+<img src = "http://www.kauaigava.com/wp-content/uploads/2015/06/DSC00793.jpg?gid=8" width="720">
+
+
+
+After the party, we will be back and overnight at the hotel
+
+
+
+### **DAY 4** 
+
+After breakfast we will have some free time until the departure time from hotel to the airport 
+
+<img src = "http://www.relato.gt/img/posts/9dd6bc0c4f4242872.jpg?h=5c61f961bd719" width="720">
+
+END OF THE PROGRAMME
+
+*****
+## Budget
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+
+library(readxl)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(DT)
+
+budget <- read_excel("timeline.xlsx", sheet = "Sheet2", 
+    col_types = c("date", "text", "text", 
+        "numeric", "text", "numeric", "numeric"))
+budget$DATE <- as.Date(budget$DATE)
+
+DT::datatable(budget, extensions = "Buttons",rownames = FALSE, options = list(paging= FALSE,
+initComplete = JS("
+    function(settings, json) {
+      $(this.api().table().header()).css({
+        'background-color': '#ee7600 ',
+        'color': '#fff'
+      });
+    }"),
+dom ='Bfrtip', buttons = c('copy','print'),                           pageLength = nrow(budget),autoWidth = TRUE)) %>% 
+   formatDate('DATE') %>% 
+  formatCurrency(6:7,'\U20AC')
+
+
+```
+
+### Terms & Conditions
+
+  *Rates valid for 2019.
+  
+  *Net rates for Maximice Russia 
+  
+  *For a group of minimum 65 pax.
+  
+  *Cutting Edge Events management fee including in the detailed rates
+  
+  *VAT included. 
+  
+  *No reservation has been done. Availability upon request.
+  
+*****
+
+## Company Profile
+
+<img src = "CURRICULUM GRAFICO.001.jpeg" width="800">

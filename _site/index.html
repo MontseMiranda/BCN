@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="MAXIMICE" />
+
+
+<title>MICHELIN GROUP</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/vis-4.16.1/vis.min.css" rel="stylesheet" />
+<script src="site_libs/vis-4.16.1/vis.min.js"></script>
+<link href="site_libs/timeline-0.4/timevis.css" rel="stylesheet" />
+<script src="site_libs/timevis-binding-0.4/timevis.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="site_libs/leaflet-easybutton-1.3.1/easy-button.css" rel="stylesheet" />
+<script src="site_libs/leaflet-easybutton-1.3.1/easy-button.js"></script>
+<script src="site_libs/leaflet-easybutton-1.3.1/EasyButton-binding.js"></script>
+<link href="site_libs/ionicons-2.0.1/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.5/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="FORMATO.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE Events</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Quotation</a>
+</li>
+<li>
+  <a href="about.html">Credentials</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">MICHELIN GROUP</h1>
+<h4 class="author"><em>MAXIMICE</em></h4>
+<h4 class="date"><em>JUNE 25TH TO 28TH 2019</em></h4>
+
+</div>
+
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script>
+<div id="destination-presentation" class="section level2">
+<h2><strong>Destination Presentation</strong></h2>
+<p><strong>Barcelona Metropolitan Region is one of Europe’s most important metropolies. Barcelona is the economic, cultural and administrative capital of Catalonia, one of the economic drivers of Spain and Southern Europe.</strong></p>
+<p><strong>Barcelona sellling points</strong> * <strong>Welcoming</strong> Maybe the locals walk fast, but they always find a moment to chat. We know that a smile is the best calling card, and in Barcelona you will find lots! With a smile , the day starts much better. * <strong>Easily accesible</strong> All you have to do is get on a plane to Barcelona: the city has excellent air connections to the vast majority of Spanish, European and major intercontinental destinations. As well, the airport is just 15 minutes from the city centre. You make the most of your time when you come to Barcelona! * <strong>State of the art infrastructures</strong> Whether for large conferences or more intimate gatherings, Barcelona has just the right facility. Imagine a banquet in a charming historic place ? Or perhaps a cutting-edge facility for that unbeatable presentation? There’s such a variety of welcoming and modern hotels. * <strong>Sucessful</strong> * <strong>Practical</strong> Barcelona is just the right size: not too big, not too small. You can nip between the most interesting sights , by cycle -thanks to an extensive network of bike lanes-, by walking or public transport , and you can soon get to the must-see sights in your free time. In Barcelona, everything is close at hand ! * <strong>Avant-garde</strong> Picasso, Miró, Dalí, Gaudí, Tàpies… they were in their time at the vanguard of their movements and their testing-ground was Barcelona. That creative flair and typical Catalan restlessness is very much part of the city today and this is reflected in the buildings, exhibitions , and the design and art that you’ll find in the most unexpected places . * <strong>Mediterranean</strong> Thanks to its great weather, diet, and above all, its character, you will see the true meaning of the word ‘Mediterranean’ in Barcelona. You can feel its cosmopolitan and dynamic spirit in the air and you actually live the Mediterranean experience. This magic draws you out onto the streets to stroll and enjoy the city’s five kilometres of Mediterranean beaches. * <strong>Sustainable</strong> In Barcelona we are very aware of the importance of protecting the environment, our resources and social surroundings while preserving our culture and traditions. That is why Barcelona has become the first city in the world to be awarded Biosphere certification, providing a guarantee that the city manages tourism responsibly and sustainably. Barcelona is also a barrier-free city, which is ready to welcome visitors with disabilities, and approaches accessibility with town planning, transport, IT, buildings and public spaces in mind. * <strong>Dynamic</strong> Every time you come to Barcelona, there’s a nice surprise: a unexpected event or market, an outdoor concert, a fun-run to watch, an impromptu street party, an alternative-type festival … Things are always happening in Barcelona, and that’s why no one gets bored here! * <strong>Cosmopolitan</strong> Barcelona has always been a welcoming city. Today you’ll find more than 160 different nationalities here: a melting pot of cultures and languages that make it an example of coexistence and dynamism. * <strong>Cultural</strong> And what history: over 2000 years of it! You´ll come across Roman ruins , Gothic treasures and surprises from the Renaissance age. Visiting the different corners of Barcelona is an authentic journey through time.</p>
+<p>You can sumarize all these selling points in the following video presentation:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dhK922IviZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="accommodation" class="section level2">
+<h2><strong>Accommodation</strong></h2>
+<div id="main-hotel-whotel-barcelona" class="section level3">
+<h3><strong>Main Hotel: WHOTEL BARCELONA</strong></h3>
+<p><strong>W Barcelona</strong> is a flagship hotel for the <strong>W brand</strong>. We opened our doors in 2009 and in order to ensure that we retain our position as a leading lifestyle hotel, we have undergone a complete renovation of our guestrooms in 2016 and our top tier suites in 2018, offering a new and innovative design to our guests. <strong>W Barcelona</strong> enjoys a privileged location, being the only hotel with <strong>direct beach access and beach club</strong>. With 473 guestrooms, we have the ability to host large groups and offer buyouts. The only difference between each guestroom is the view and how high it is located, otherwise, in terms of size and décor, all guestrooms are the same. In addition, because the hotel was built on reclaimed land, every guestroom benefits from exceptional views of the sea. What differentiates us from the other hotels in Barcelona? In terms of function spaces, our 10,000 sq.ft. Great Room features a floor to ceiling window with stunning views of the Mediterranean. Combined with our 14 breakout rooms and 5 terraces, we are perfect for conferences of all sizes. In addition, <strong>W Barcelona</strong> features 6 F&amp;B outlets including, but not limited to, a Michelin star restaurant, a rooftop cocktail lounge and beach club. Perfect for incentive trips, as we also have 3 pools, 2 of which are outdoors and 1 indoors, part of our new wellness and fitness area, GETAWAY and FIT.</p>
+<p><strong>W Hotel Barcelona Virtual Tour</strong>: <iframe width="560" height="315" src="https://www.youtube.com/embed/urt7o2_E-1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><img src = "https://pix10.agoda.net/hotelImages/161/161330/161330_16080919470045346683.jpg?s=1024x768" width="360"> <img src = "https://q-ec.bstatic.com/images/hotel/max1024x768/101/101040075.jpg" width="360" align="right"></p>
+</div>
+</div>
+<div id="programme" class="section level2">
+<h2>Programme</h2>
+<div id="programme-overview-and-timeline" class="section level3">
+<h3><strong>Programme Overview and timeline</strong></h3>
+<div id="htmlwidget-f1f5bdea597f2b46170d" class="timevis html-widget" style="width:100%;height:300px;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-f1f5bdea597f2b46170d">{"x":{"items":[{"id":"1","start":"2019-06-25 09:00:00","content":"Transfer in","group":"3","type":"box","style":"background-color:#FF9933;"},{"id":"2","start":"2019-06-25 14:00:00","content":"Hotel Lunch","group":"2","type":"box","style":"background-color:#FF9933;"},{"id":"3","start":"2019-06-25 16:30:00","content":"Barcelona city tour","group":"3","type":"box","style":"background-color:#FF9933;"},{"id":"4","start":"2019-06-25 19:00:00","content":"Cangrejo Loco","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"5","start":"2019-06-26 08:30:00","content":"Full Day conference","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":"6","start":"2019-06-26 19:00:00","content":"W Hotel dinner","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"7","start":"2019-06-27 08:30:00","content":"Full Day conference","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":"8","start":"2019-06-27 19:00:00","content":"Kawai","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"9","start":"2019-06-28 09:00:00","content":"Transfer Out","group":"1","type":"box","style":"background-color:#FF9933;"}],"groups":[{"id":"1","content":"Morning"},{"id":"2","content":"Lunch"},{"id":"3","content":"Afternoon"},{"id":"4","content":"Diner"}],"showZoom":true,"zoomFactor":0.2,"fit":true,"options":[],"height":300,"api":[{"method":"setOptions","options":{"orientation":"top","align":"left"}}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level3">
+<h3><strong>Map</strong></h3>
+<div id="htmlwidget-9af68bd2c1b834e41826" style="width:768px;height:768px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9af68bd2c1b834e41826">{"x":{"options":{"minZoom":14,"maxZoom":18,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"dragging":true},"calls":[{"method":"addProviderTiles","args":["Esri",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[41.3743,41.3882,41.4042,41.306],[2.18845999999996,2.20087999999998,2.17416000000003,1.99909000000002],5,null,null,{"interactive":true,"className":"","stroke":true,"color":["#FF0000","#C90089","#0000FF","#C90089"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#FF0000","#C90089","#0000FF","#C90089"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[[41.3743,41.3882,41.4042,41.306],[2.18845999999996,2.20087999999998,2.17416000000003,1.99909000000002],["<b>Whotel Barcelona<\/b>","<b>Cangrejo Loco<\/b>","<b>Sagrada Familia<\/b>","<b>Kawai beach club<\/b>"],null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addLegend","args":[{"colors":["#FF0000","#0000FF","#C90089"],"labels":["Accom","Act","Rest"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]},{"method":"addEasyButton","args":[{"icon":"ion-arrow-shrink","title":"Reset View","onClick":"function(btn, map){ map.setView(map._initialCenter, map._initialZoom); }","position":"topleft"}]}],"limits":{"lat":[41.306,41.4042],"lng":[1.99909000000002,2.20087999999998]}},"evals":["calls.4.args.0.onClick"],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el, x){ var map = this; map._initialCenter = map.getCenter(); map._initialZoom = map.getZoom();}).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+<div id="day-1" class="section level3">
+<h3><strong>DAY 1</strong></h3>
+<p>Arrival into <strong>Barcelona airport</strong> from 9am, meet and greet by Russian Speaking assistance and transfer to hotelW in different vehicles, depending on final arrival list</p>
+<p>After 20 minutes transfer, check in at the hotel and some free time until lunch time</p>
+<p>For lunch, it will be in hotel W. The hotel offers a couple of possibilities for this lunch:</p>
+<p>Lunch in <strong>Sun Deck</strong></p>
+<p><img src = "https://cache.marriott.com/marriottassets/marriott/BCNWH/bcnwh-sun-deck-9424-hor-feat.jpg?interpolation=progressive-bilinear&" width="720"></p>
+<p>Lunch in <strong>Breeze Room</strong></p>
+<p><img src = "http://meeting-assets.starwoodpromos.com/P3183/Breezeroom1.jpg" width="800"></p>
+<p>After the lunch, once all the group will be together, we will start a <strong>city tour of Barcelona</strong> including entrace to the most representative monument of the city: <strong>Sagrada Familia</strong></p>
+<div id="city-tour-and-sagrada-familia-visit" class="section level4">
+<h4><strong>CITY TOUR AND SAGRADA FAMILIA VISIT</strong></h4>
+<ul>
+<li><strong>Duration</strong>: 4 hours maximum</li>
+<li><strong>Location</strong>: Panoramic tour and Sagrada Familia</li>
+<li><strong>Capacity</strong> Minimun 20 pax - maximum 100 pax</li>
+<li><strong>included</strong> English speaking guide (Russian on request), bus at disposal for the group and entrace ticket to Sagrada Familia</li>
+</ul>
+<p>We will start our tour in our chosen hotel with a panoramic tour of the city, where the group will see the main highlights of the city: <strong>Gaudi’s monuments (Casa Mila and Casa Batllo), Montjuic, Port Vell at the end of Las Ramblas, the new Barcelona (modern part) and we will stop at the Sagrada Familia for visit</strong></p>
+<p><strong>Sagrada Familia</strong> is a church unlike any other. It is a surreal combination of Gothic, Art Nouveau and Modernist styles. Walk through the church’s dream-like interior and see the symphony of light created by the stained glass. Admire the ornate Nativity and Passion facades. As you explore the church, your guide will tell you the story of Gaudi’s ambition and untimely death, the anarchist bombing, and the technology used to realize his vision.</p>
+<p><img src = "https://images.musement.com/cover/0002/37/thumb_136083_cover_header.jpeg?&q=60&fit=crop&lossless=true&auto=format&w=412&h=200" width="800" ></p>
+<p>At the end of the visit, the group will enjoy with a Dinner next to the Sea at the restaurant <strong>El Cangrejo Loco</strong></p>
+</div>
+<div id="cangrejo-loco-restaurant" class="section level4">
+<h4><strong>Cangrejo Loco Restaurant</strong></h4>
+<ul>
+<li><strong>Location</strong> Port Olympic</li>
+<li><strong>Cuisine</strong> Mediterranean cuisine</li>
+<li><strong>capacity</strong> 450 pax in different rooms, dining rooms and marquees</li>
+</ul>
+<p>On the 16th of July 1992, on the occasion of the Barcelona 1992 Olympic Games, <strong>El Cangrejo Loco</strong> began its activity in Barcelona’s Olympic Port, a marina created for hosting the sailing events. Nowadays, it is considered a symbol of the new Barcelona post-92.</p>
+<p>The Games are all history now, but <strong>El Cangrejo Loco</strong> is present and future. Still today, after more than fifteen years, it remains loyal to its objective: to guarantee the best quality in all the dishes and in the exquisite service.</p>
+<p>The restaurant is divided into several dining rooms ideal for any occasion, and also has two large indoor terraces and five outdoor terraces, all of them with spectacular views of the sea and the Olympic Port.</p>
+<p>Specialized in paellas and rice dishes, beach fish and seafood, the restaurant’s menu is sourced from fresh and natural products to offer excellent cuisine</p>
+<p><img src = "http://www.elcangrejoloco.com/archivos/galeria/grandes/13534967022.jpg" width="800"></p>
+<p>Once the dinner will finish, we transfer the group back to <strong>hotel W Barcelona</strong> for overnight.</p>
+</div>
+</div>
+<div id="day-2" class="section level3">
+<h3><strong>DAY 2</strong></h3>
+<p>After buffet breakfast, the group will have a full day meeting in <strong>Breeze room</strong> Coffee breaks will be served at <strong>Breeze terrace</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HcPKJqJepxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Dinner will be served at <strong>Salt</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9LI7-_1PNoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Overnight at the hotel</p>
+</div>
+<div id="day-3" class="section level3">
+<h3><strong>DAY 3</strong></h3>
+<p>After buffet breakfast, the group will have a full day meeting in <strong>Breeze room</strong> Coffee breaks will be served at <strong>Breeze terrace</strong></p>
+<p>After the conference the group will have some free time until dinner time. For this special dinner, we have suggested an nice beach club located outside Barcelona and next to the Mediterranan Sea <strong>Kawai Beach Club</strong> located around 20 minutes transfer south from <strong>Hotel W Barcelona</strong></p>
+<div id="kawai-beach-club" class="section level4">
+<h4><strong>Kawai Beach Club</strong></h4>
+<ul>
+<li><strong>Location</strong> Gava Mar town</li>
+<li><strong>Cuisine</strong> Mediterranean Cuisine</li>
+<li><strong>capacity</strong> Around 600 seeating pax depending on the used spaces. For the group will have the BBQ area in exclusivity for the group</li>
+</ul>
+<p>You’ve not been magically transported to Polynesia, you’re at the beach in Gavà, but chef Òscar Manresa has transformed this spot among the sand dunes into a <strong>‘xiringuito’ (beach bar)</strong> with style, where you can imagine spending your holidays, stretched out on a lounge chair in front of the Mediterranean Sea, while you watch the world go by. And bonus: you can eat really well here too. Everything is served tapas-style, some with ingredients from <strong>Kauai’s own garden</strong>, and you won’t find greasy mounds of fried snacks like you might among some of the worst coastline snack bars. Fill up on fresh oysters, calamari, freshly fried fish, squid with meatballs, burgers, grilled meats…</p>
+<p>This splendid xiringuito is also very clear about the maxim that anyone who prepares sardines should have tattooed in their mind: ‘Sardines are only good in months without an “r”.’ Their popular skewers, charcoal-grilled on a bamboo skewer and cooked with just a hint of salt, are a classic option in the summer months. And they are just one of the many charms of a pleasant and cheerful space, with a large terrace overlooking the sea and a menu full of classic tapas made with good, seasonal products.</p>
+<p><img src = "http://www.baixllobregatcb.com/sites/default/files/styles/cap_alera_coorporativa/public/terraza_ok.jpg?itok=Js3lfWdG " width="720"></p>
+<p>For party, the Club has a <strong>lounge</strong> where we can have a DJ party.</p>
+<p><img src = "http://www.kauaigava.com/wp-content/uploads/2015/06/DSC00793.jpg?gid=8" width="720"></p>
+<p>After the party, we will be back and overnight at the hotel</p>
+</div>
+</div>
+<div id="day-4" class="section level3">
+<h3><strong>DAY 4</strong></h3>
+<p>After breakfast we will have some free time until the departure time from hotel to the airport</p>
+<p><img src = "http://www.relato.gt/img/posts/9dd6bc0c4f4242872.jpg?h=5c61f961bd719" width="720"></p>
+<p>END OF THE PROGRAMME</p>
+<hr />
+</div>
+</div>
+<div id="budget" class="section level2">
+<h2>Budget</h2>
+<div id="htmlwidget-15eebb2bd90382aeccad" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15eebb2bd90382aeccad">{"x":{"filter":"none","extensions":["Buttons"],"data":[["2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-26","2019-06-26","2019-06-26","2019-06-26","2019-06-26","2019-06-27","2019-06-26","2019-06-26","2019-06-26","2019-06-26","2019-06-26",null,"2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-25","2019-06-27","2019-06-27","2019-06-27","2019-06-27","2019-06-27","2019-06-27","2019-06-27","2019-06-28","2019-06-28","2019-06-28","2019-06-28","2019-06-28","2019-06-28",null,null],["Accom","Accom","Accom","Accom","Accom","Accom","Accom","Accom","Accom","Accom","Av","Av","Av","Av","Av",null,"Trnsf","Trnsf","Trnsf","Asst","Trnsf","Trnsf","Trnsf","Trnsf","Trnsf","Rest","Trnsf","Trnsf","Asst","Ven","Ven","Ven","Ven","Trnsf","Trnsf","Trnsf","Asst","Trnsf","Trnsf",null,"TOTAL"],["W",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Barcelona city tour","Transfer",null,"Cangrejo Loco","Kawai","Kawai",null,"Kawai","Kawai",null,null,null,null,null,null,null,null,null,null],[216,216,72,72,72,72,72,72,72,72,null,2,2,null,2,null,1,1,72,1,null,null,1,null,null,72,1,1,2,null,null,null,null,1,1,72,1,null,null,null,null],["DUIs,(cozy, wonderful, wonderful sky, fabulous, fabulous sky rooms) b.breakfast included (rates per room and night)\nEstimated 72 roooms per 3 nights","5* hotel tax","Lunch in the hotel - E Wow Cabana (minimum spend 6100€) Finger buffet Lunch - rate per person from","Drink package per lunch from","DDR - Meeting room Breeze including 2 coffee breaks to be served in the garden and lunch in E Wow Cabana Restaurant - rate per person from","Dinner at the Salt (minimum spend 13750€) - Welcome canapes from","Drink package for welcome from","Seater buffet dinner to be served at Salt restaurant - rate per person from","Drink package for dinner from","DDR - Meeting room Breeze including 2 coffee breaks to be served in the garden and lunch in E Wow Cabana Restaurant - rate per person from","Tv Plasma 82 inches - included in the rate","Projection click share CE 200  - rate per day per unit from","Basic sound system includind: 4 speakers, PS10 amp, mixed table, 1 mic, - rate per day per unit from","Optional: 2 TV plasmas 60” to reforce mid-room view","Flipchart  - rate per day per unit from",null,"50 seaters bus for transfer from Barcelona airport to Hotel W - rate per bus per way from","30 seaters bus for transfer from Barcelona airport to Hotel - rate per bus per way from","w","Russian Speaking assistance at the airport for meet and greet","Car up to 3 people  for transfer from Barcelona airport to Hotel W Barcelona - rate per bus per way from","Van up to 6 people  for transfer from Barcelona airport to Hotel W Barcelona- rate per bus per way from","Including: 50/30 seater bus at disposal 6 hours Barcelona city tour and dinner, Russian Speaking guide and entrance to Sagrada Familia  - rate per bus from","Bus extra hour from","Optional: Mineral water on board from","Dinner - rate per person from","50 seater bus at disposal 5 hours for Kawai dinner and party and back to the hotel - rate per bus from","30 seater bus at disposal 5 hours for Kawai dinner and party and back to the hotel - rate per bus from","Russian Speaking assistance for transfers and dinners","Welcome aperitive - rate per person from","BBQ menu including drink package and coffee  - rate per person from","Open bar after dinner  1 hour rate from — rate per person from (estimated 2 hours)","DJ Party 2 hours - non in exclusivity for the group (cost of the dj 1000 - 700e will be paid by Kawai)","50 seaters bus for transfer from Hotel w to Barcelona airport - rate per bus per way from","30 seaters bus for transfer Hotel w to Barcelona airport- rate per bus per way from","Mineral water on board from","Russian Speaking assistance at the hotel as dispatcher for departures","Car up to 3 people  for transfer from Hotel w to Barcelona airport- rate per bus per way from","Van up to 6 people  for transfer from Hotel W to Barcelona airport - rate per bus per way from",null,null],[335.5,2.48,63.5,30.5,165,37,17,83,30.5,165,null,256,772,3665,60.5,null,229,205,1.5,368,95,104,75,106,1.5,55,541,462,450,16,57,21.5,300,541,462,1.5,450,95,104,null,null],[72468,535.68,4572,2196,11880,2664,1224,5976,2196,11880,0,512,1544,0,121,null,229,205,108,368,0,0,75,null,0,3960,541,462,900,0,0,0,0,541,462,108,450,0,0,null,126177.68]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>DATE<\/th>\n      <th>CAT<\/th>\n      <th>Owner<\/th>\n      <th>Quantity<\/th>\n      <th>Concept<\/th>\n      <th>withVAT<\/th>\n      <th>Total<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"initComplete":"\n    function(settings, json) {\n      $(this.api().table().header()).css({\n        'background-color': '#ee7600 ',\n        'color': '#fff'\n      });\n    }","dom":"Bfrtip","buttons":["copy","print"],"pageLength":41,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[3,5,6]}],"order":[],"orderClasses":false,"lengthMenu":[10,25,41,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatDate(this, row, data, 0, 'toDateString');\nDTWidget.formatCurrency(this, row, data, 5, '€', 2, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 6, '€', 2, 3, ',', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="terms-conditions" class="section level3">
+<h3>Terms &amp; Conditions</h3>
+<p>*Rates valid for 2019.</p>
+<p>*Net rates for Maximice Russia</p>
+<p>*For a group of minimum 65 pax.</p>
+<p>*Cutting Edge Events management fee including in the detailed rates</p>
+<p>*VAT included.</p>
+<p>*No reservation has been done. Availability upon request.</p>
+<hr />
+</div>
+</div>
+<div id="company-profile" class="section level2">
+<h2>Company Profile</h2>
+<p><img src = "CURRICULUM%20GRAFICO.001.jpeg" width="800"></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
